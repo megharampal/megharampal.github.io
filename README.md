@@ -1,12 +1,21 @@
 # Megha Rampal — Portfolio Website
 
-A responsive, single-page portfolio built with HTML, CSS and vanilla JavaScript for GitHub Pages.
+A responsive, single-page portfolio built with HTML, CSS and vanilla JavaScript for GitHub Pages. The layout follows the left/right placement notes in `Portfolio1.docx`.
 
 ## Files
 - `index.html` — content and project links
 - `style.css` — navy/white theme, responsive layout, decorative project placeholders and motion
 - `script.js` — mobile menu, scroll progress, reveal-on-scroll and project filters
 - `assets/projects/` — place approved project screenshots here
+
+## Layout mapped from Portfolio1.docx
+- **About Me:** full professional introduction and visual storytelling profile.
+- **Impact:** six metrics/highlights.
+- **What I Do:** “How I Work” content on the left and core skills on the right on desktop.
+- **Tools & Platforms:** explanatory copy on the left and the nine tools/platforms on the right on desktop.
+- **Selected Work:** grouped portfolio examples with the source links retained.
+- **Education & Credentials:** credential list on the left and section statement on the right on desktop.
+- **Contact:** email, LinkedIn and Gurugram location.
 
 ## Preview locally
 1. Download and unzip the project.
