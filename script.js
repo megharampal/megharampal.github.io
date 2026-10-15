@@ -85,6 +85,23 @@
     }));
   }
 
+  const imageLightbox = document.querySelector('.image-lightbox');
+  const lightboxImage = imageLightbox?.querySelector('.image-lightbox-image');
+  const lightboxCaption = imageLightbox?.querySelector('.image-lightbox-caption');
+  document.querySelectorAll('.booth-photo-preview').forEach(button => {
+    button.addEventListener('click', () => {
+      if (!imageLightbox || !lightboxImage) return;
+      lightboxImage.src = button.dataset.fullImage;
+      lightboxImage.alt = button.dataset.imageTitle || '';
+      if (lightboxCaption) lightboxCaption.textContent = button.dataset.imageTitle || '';
+      imageLightbox.showModal();
+    });
+  });
+  imageLightbox?.querySelector('.image-lightbox-close')?.addEventListener('click', () => imageLightbox.close());
+  imageLightbox?.addEventListener('click', event => {
+    if (event.target === imageLightbox) imageLightbox.close();
+  });
+
   const filters = document.querySelectorAll('.filter-chip');
   const projects = document.querySelectorAll('.project-card');
   filters.forEach(button => button.addEventListener('click', () => {
@@ -95,5 +112,4 @@
     });
   }));
 
-  document.querySelector('#year').textContent = new Date().getFullYear();
 })();
