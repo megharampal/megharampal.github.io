@@ -16,15 +16,18 @@
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
     <a class="wordmark" href="#about" aria-label="Megha Rampal home">MR<span>.</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#impact">Impact</a><a href="#work">Selected work</a><a href="#expertise">Expertise</a><a href="#education">Education</a>
-      <a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
+    <nav class="nav notebook-tabs" aria-label="Portfolio pages" role="tablist">
+      <button class="notebook-tab active" id="tab-about" role="tab" aria-selected="true" aria-controls="about" data-tab="about"><span>01</span> About</button>
+      <button class="notebook-tab" id="tab-impact" role="tab" aria-selected="false" aria-controls="impact" data-tab="impact"><span>02</span> Impact</button>
+      <button class="notebook-tab" id="tab-expertise" role="tab" aria-selected="false" aria-controls="expertise" data-tab="expertise"><span>03</span> Expertise</button>
+      <button class="notebook-tab" id="tab-work" role="tab" aria-selected="false" aria-controls="work" data-tab="work"><span>04</span> Selected work</button>
+      <button class="notebook-tab" id="tab-education" role="tab" aria-selected="false" aria-controls="education" data-tab="education"><span>05</span> Education</button>
+      <button class="notebook-tab" id="tab-contact" role="tab" aria-selected="false" aria-controls="contact" data-tab="contact"><span>06</span> Contact</button>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-shell" id="about">
+    <section class="hero section-shell tab-page" id="about" role="tabpanel" aria-labelledby="tab-about" data-page="about">
       <div class="hero-grid-mark" aria-hidden="true"></div>
       <div class="hero-copy reveal">
         <div class="section-kicker reveal"><span>01</span><span>INTRODUCTION · ABOUT ME</span></div>
@@ -53,7 +56,7 @@
       <a class="scroll-cue" href="#impact"><span></span> SCROLL TO EXPLORE</a>
     </section>
 
-    <section class="impact-section section-pad" id="impact">
+    <section class="impact-section section-pad tab-page" id="impact" role="tabpanel" aria-labelledby="tab-impact" data-page="impact" hidden>
       <div class="section-shell">
         <div class="section-kicker section-kicker-light reveal"><span>02</span><span>THE SCALE OF THE WORK</span></div>
         <div class="impact-header reveal"><h2 class="section-heading">Ideas into assets.<br><em>Assets into impact.</em></h2><p>Behind every number is a story, a strategy, and a communication goal. Here’s a look at the scale of my work and the creative touchpoints I help bring to life annually.</p></div>
@@ -68,7 +71,7 @@
       </div>
     </section>
 
-    <section class="expertise-section section-pad" id="expertise">
+    <section class="expertise-section section-pad tab-page" id="expertise" role="tabpanel" aria-labelledby="tab-expertise" data-page="expertise" hidden>
       <div class="section-shell">
         <div class="section-kicker reveal"><span>03</span><span>WHAT I DO</span></div>
         <div class="expertise-layout">
@@ -87,7 +90,7 @@
     </section>
 
 
-    <section class="work-section section-shell section-pad" id="work">
+    <section class="work-section section-shell section-pad tab-page" id="work" role="tabpanel" aria-labelledby="tab-work" data-page="work" hidden>
       <div class="section-kicker reveal"><span>04</span><span>SELECTED WORK</span></div>
       <div class="work-heading reveal"><h2 class="section-heading">A few ways I make<br><em>ideas visible.</em></h2><p>A selection of communication and creative work across digital, print, events and video. Project links open the original work where available.</p></div>
       <div class="filter-row reveal" role="group" aria-label="Filter projects">
@@ -157,7 +160,7 @@
       <p class="work-note reveal">Project visuals on this page are designed placeholders, not original client artwork. Replace them with approved screenshots or images of your work before sharing widely.</p>
     </section>
 
-    <section class="education-section section-shell section-pad" id="education">
+    <section class="education-section section-shell section-pad tab-page" id="education" role="tabpanel" aria-labelledby="tab-education" data-page="education" hidden>
       <div class="section-kicker reveal"><span>05</span><span>LEARNING & CREDENTIALS</span></div>
       <div class="education-layout"><div class="education-list reveal">
         <article><span class="edu-year">IN PROGRESS</span><div><h3>AI in Design</h3><p>In progress</p></div><span class="edu-mark">↗</span></article>
@@ -167,7 +170,7 @@
       </div><div class="education-heading reveal"><p class="project-type">EDUCATION & CREDENTIALS</p><h2 class="section-heading">Always learning.<br><em>Always evolving.</em></h2><p class="expertise-intro">A foundation in design, communication and business—with a continued interest in what’s next.</p></div></div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <section class="contact-section tab-page" id="contact" role="tabpanel" aria-labelledby="tab-contact" data-page="contact" hidden>
       <div class="section-shell contact-inner">
         <div class="section-kicker section-kicker-light reveal"><span>06</span><span>HAVE A VISION?</span></div>
         <div class="contact-main reveal"><h2>Have a vision?<br><em>Let’s make it visual.</em></h2><div><p>From bold brand identities to meaningful collaborations, I’m always up for turning great ideas into something unforgettable. Have a project in mind? Let’s talk!</p><a class="button button-light" href="mailto:megha.rampal.89@gmail.com">Email me <span>↗</span></a></div></div>
