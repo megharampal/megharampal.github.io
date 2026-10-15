@@ -19,6 +19,26 @@
     menuButton.setAttribute('aria-expanded', 'false');
   }));
 
+
+  // Highlight the navigation tab for the section currently in view.
+  const sectionLinks = [...nav.querySelectorAll('a[href^="#"]')];
+  const sections = sectionLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sectionLinks.forEach(link => {
+            const active = link.getAttribute('href') === `#${entry.target.id}`;
+            link.classList.toggle('is-current', active);
+            if (active) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+          });
+        }
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
