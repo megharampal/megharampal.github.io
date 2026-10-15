@@ -40,19 +40,49 @@
   }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pageSections = document.querySelectorAll('main > section');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('is-in-view', entry.isIntersecting);
+      });
+    }, { threshold: 0.06 });
+    pageSections.forEach(section => sectionObserver.observe(section));
+  } else {
+    pageSections.forEach(section => section.classList.add('is-in-view'));
+  }
+
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
     revealItems.forEach(item => observer.observe(item));
   } else {
     revealItems.forEach(item => item.classList.add('is-visible'));
+  }
+
+  if (!reduceMotion) {
+    sectionLinks.forEach(link => link.addEventListener('click', event => {
+      const section = document.querySelector(link.getAttribute('href'));
+      if (!section) return;
+      event.preventDefault();
+      history.pushState(null, '', link.getAttribute('href'));
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const cards = section.querySelectorAll('.stat-card, .project-card, .skill-list>div, .education-list article, .hero-art, .hero-copy, .tools-panel, .contact-main, .contact-bottom');
+      window.setTimeout(() => {
+        cards.forEach((card, index) => card.animate([
+          { translate: '0 0' },
+          { translate: '-3px 1px' },
+          { translate: '3px -1px' },
+          { translate: '-2px 0' },
+          { translate: '2px 0' },
+          { translate: '0 0' }
+        ], { duration: 460, delay: Math.min(index * 38, 260), easing: 'ease-in-out' }));
+      }, 650);
+    }));
   }
 
   const filters = document.querySelectorAll('.filter-chip');

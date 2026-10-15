@@ -127,5 +127,10 @@ body{font-size:16px}
 .visual-launch .launch-art{inset:18% 8% 10%}
 .visual-social .visual-label{z-index:3}
 .visual-social .social-art{top:13%}
+/* Make section and card motion clear on both entry and exit while scrolling. */
+.js main>section{opacity:.72;transform:translateY(24px);transition:opacity .55s var(--ease),transform .65s var(--ease)}
+.js main>section.is-in-view{opacity:1;transform:translateY(0)}
+.js .reveal{transform:translateY(38px) scale(.985);transition:opacity .48s var(--ease),transform .58s var(--ease)}
+.js .reveal.is-visible{transform:translateY(0) scale(1)}
 @media(max-width:900px){.hero h1{font-size:clamp(40px,5vw,58px)}.contact-main h2{font-size:clamp(48px,7vw,72px)}}
 @media(max-width:650px){.hero h1{font-size:clamp(40px,9vw,54px)}.art-type{font-size:36px}.section-heading{font-size:clamp(32px,8vw,44px)}.contact-main h2{font-size:clamp(46px,11vw,66px)}.nav a:not(.nav-contact)::after{bottom:5px;right:auto;width:36px}.project-wide .project-visual,.project-large .project-visual{aspect-ratio:1.28}}
