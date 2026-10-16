@@ -191,3 +191,34 @@ body{font-size:16px}
 @media(max-width:900px){.booth-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.campaign-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.hero h1{font-size:clamp(40px,9vw,54px)}.art-type{font-size:36px}.section-heading{font-size:clamp(32px,8vw,44px)}.contact-main h2{font-size:clamp(46px,11vw,66px)}.nav a:not(.nav-contact)::after{bottom:5px;right:auto;width:36px}.project-wide .project-visual,.project-large .project-visual{aspect-ratio:1.28}.education-list article{grid-template-columns:minmax(0,1fr);gap:5px;padding:20px 0}.education-list .edu-year{padding-top:0;line-height:1.4}.education-list h3{line-height:1.35}.micro-links{gap:9px}.microsite-showcase{grid-column:auto;padding:18px}.microsite-preview-grid{gap:10px}.microsite-preview>span{padding:10px;font-size:16px}}
+
+/* Final mobile review adjustments */
+.stat-card:nth-child(-n+4) .stat-number{color:#9bbfe0}
+.stat-card:nth-child(5) .stat-number,.stat-card:nth-child(6) .stat-number{color:#fff}
+@media(min-width:651px){.contact-bottom{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){.hero{padding-block:24px 70px}.launch-links,.social-post-links{display:flex;flex-wrap:wrap;gap:10px}.social-links-showcase{grid-column:span 2}.hackathon-preview-grid{grid-template-columns:minmax(0,1fr);max-width:420px}.hackathon-photo img{aspect-ratio:1.25;object-fit:cover;object-position:center 40%}}
+
+/* Match the marked impact section and use the supplied newsletter page capture. */
+.stat-card:nth-child(n){border-top:3px solid #fff}
+.stat-card:nth-child(n) .stat-number{color:#fff}
+.project-large .visual-newsletter{aspect-ratio:2.55;background:#06245d}
+.newsletter-page-preview{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#06245d}
+.stat-card:nth-child(-n+4) .stat-number{color:#9bbfe0}
+.stat-card:nth-child(5) .stat-number,.stat-card:nth-child(6) .stat-number{color:#fff}
+
+/* Prevent the full-width social links card from forcing horizontal overflow on phones. */
+@media(max-width:650px){
+  .project-grid>.social-links-showcase{grid-column:1 / -1;min-width:0;width:100%}
+  .social-post-links,.launch-links,.booth-source-links{max-width:100%;min-width:0}
+  .social-post-links a,.launch-links a,.booth-source-links a{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .section-shell,.project-card,.microsite-showcase{min-width:0}
+}
+
+/* Keep the newsletter capture inside its link box and stat cells aligned on phones. */
+.project-large .visual-newsletter{position:relative;width:100%;max-width:100%;overflow:hidden;aspect-ratio:2.55}
+.newsletter-page-preview{position:absolute;inset:0;width:100%;max-width:100%;height:100%;object-fit:contain}
+@media(max-width:650px){
+  .project-large .visual-newsletter{aspect-ratio:2.25}
+  .js .stats-grid .stat-card{min-width:0;transition-delay:0s}
+  .js .stats-grid .stat-card.reveal,.js .stats-grid .stat-card.reveal.is-visible{transform:none}
+}
