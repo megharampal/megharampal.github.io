@@ -227,3 +227,20 @@ body{font-size:16px}
   .work-section{padding-bottom:30px}
   .education-section{padding-top:30px}
 }
+
+/* Brochure and flyer PDF sample previews */
+.brochure-preview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+.brochure-preview{position:relative;display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #dbe4ec;border-radius:5px;background:#fff;transition:transform .22s ease,box-shadow .22s ease}
+.brochure-preview:hover{transform:translateY(-4px);box-shadow:0 12px 28px #102a4318}
+.brochure-preview iframe{display:block;width:100%;height:230px;border:0;background:#f5f8fa;pointer-events:none}
+.brochure-preview>span{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;color:#345f85;font-size:15px;font-weight:700}
+.brochure-preview>span b{font-size:18px;font-weight:500}
+@media(max-width:900px){.brochure-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.brochure-showcase{padding:18px}.brochure-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.brochure-preview iframe{height:210px}.brochure-preview>span{padding:9px;font-size:14px}}
+
+/* Beyond the Brief sample gallery */
+.beyond-brief-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.beyond-brief-image img{aspect-ratio:auto;width:100%;height:auto;max-height:300px;object-fit:contain;background:#f5f8fa}
+.beyond-brief-image span b{font-size:13px;font-weight:700;letter-spacing:.02em}
+.beyond-brief-links{margin-top:18px}
+@media(max-width:650px){.beyond-brief-gallery{grid-template-columns:minmax(0,1fr);gap:12px}.beyond-brief-image img{max-height:none;max-height:240px}.beyond-brief-image span{font-size:14px}}
